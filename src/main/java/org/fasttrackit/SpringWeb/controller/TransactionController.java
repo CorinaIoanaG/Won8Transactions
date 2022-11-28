@@ -25,22 +25,22 @@ public class TransactionController {
         }
     }
 
-    @GetMapping("{type}")
-    public List<Transaction> getByType(@PathVariable Type type) {
+    @GetMapping(value = "{type}")
+    public List<Transaction> getByType(@RequestParam Type type) {
         return transactionsService.getTransactionsByType(type);
     }
 
-    @GetMapping("{amount1}")
-    public List<Transaction> getByMinAmount(@PathVariable Double amount1) {
-        return transactionsService.getTransactionsByMinAmount(amount1);
+    @GetMapping(value = "/min/{amount}")
+    public List<Transaction> getByMinAmount(@RequestParam Double amount) {
+        return transactionsService.getTransactionsByMinAmount(amount);
     }
 
-    @GetMapping("{amount2}")
-    public List<Transaction> getByMaxAmount(@PathVariable Double amount2) {
-        return transactionsService.getTransactionsByMaxAmount(amount2);
+    @GetMapping(value = "/max/{amount}")
+    public List<Transaction> getByMaxAmount(@RequestParam Double amount) {
+        return transactionsService.getTransactionsByMaxAmount(amount);
     }
 
-    @GetMapping("{id}")
+    @GetMapping(value = "{id}")
     public Transaction getById(@PathVariable int id) {
         return transactionsService.getById(id);
     }
@@ -50,22 +50,22 @@ public class TransactionController {
         return transactionsService.add(transaction);
     }
 
-    @PutMapping("{id}")
+    @PutMapping(value = "{id}")
     public Transaction update(@PathVariable int id, @RequestBody Transaction transaction) {
         return transactionsService.update(id, transaction);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping(value = "{id}")
     public Transaction deleteById(@PathVariable int id) {
         return transactionsService.deleteById(id);
     }
 
-    @GetMapping
+    @GetMapping(value = "/type-group")
     public Map<Type, Transaction> getMapByType() {
         return transactionsService.getTransactionsMapByType();
     }
 
-    @GetMapping
+    @GetMapping(value = "/product-group")
     public Map<String, Transaction> getMapByProduct() {
         return transactionsService.getTransactionsMapByProduct();
     }
