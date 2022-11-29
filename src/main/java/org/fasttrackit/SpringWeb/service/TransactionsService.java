@@ -1,5 +1,6 @@
 package org.fasttrackit.SpringWeb.service;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.fasttrackit.SpringWeb.model.Transaction;
 import org.fasttrackit.SpringWeb.model.Type;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
+
 public class TransactionsService {
     private final TransactionsReader transactionsReader;
     private List<Transaction> transactionList;

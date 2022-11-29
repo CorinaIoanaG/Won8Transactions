@@ -1,5 +1,6 @@
 package org.fasttrackit.SpringWeb.service;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.Value;
 import org.fasttrackit.SpringWeb.model.Transaction;
 import org.fasttrackit.SpringWeb.model.Type;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
+
 public class TransactionsReader {
 
     public static int transactionId = 0;

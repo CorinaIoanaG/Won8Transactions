@@ -1,5 +1,6 @@
 package org.fasttrackit.SpringWeb.controller;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.RequiredArgsConstructor;
 import org.fasttrackit.SpringWeb.model.Transaction;
 import org.fasttrackit.SpringWeb.model.Type;
